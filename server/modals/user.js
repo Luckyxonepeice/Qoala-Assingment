@@ -1,35 +1,40 @@
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-    id:{
+    idCardNumber:{
         type:String,
-        trim:true,
-        required:true,
+        //trim:true,
+        //required:true,
     },
 
-    first_name:{
+    Name:{
         type:String,
-        trim:true,
-        required:true,
+        //trim:true,
+        //required:true,
     },
 
-    last_name:{
+    Last_name:{
         type:String,
-        trim:true,
-        required:true,
+        //trim:true,
+        //required:true,
     },
 
-    dob:{
+    Date_of_birth:{
         type:String,
-        required:true,
+        //required:true,
     },
 
-    issue_date:{
+    Date_of_issue:{
         type:String,
-        required:true,
+        //required:true,
     },
 
-    expiry_date:{
+    Date_of_Expiry:{
+        type:String,
+        //required:true,
+    },
+
+    Status:{
         type:String,
         required:true,
     }

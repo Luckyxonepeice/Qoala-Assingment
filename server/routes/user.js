@@ -1,11 +1,11 @@
 const express = require('express');
 const {uploadImage} = require("../helper/multer");
-const {CONFIG} = require('../vars/secure');
-const vision= require('@google-cloud/vision');
+const {detectLandMark} = require('../helper/logic')
+const {validate} = require('../helper/validate');
 
 const router = express.Router();
 
-router.post('/add/adhaar',uploadImage.single("card"),(req,res)=>{
+router.post('/add/adhaar',uploadImage.single("card"),async (req,res)=>{
     
     const {file}= req;
     if(!file){
@@ -23,21 +23,10 @@ router.post('/add/adhaar',uploadImage.single("card"),(req,res)=>{
             error:"Image size Exceed 2 MB",
         })
     }
-
-    const client = new vision.ImageAnnotatorClient(CONFIG);
-
     const filePath = file.path;
-
-    const detectLandMark = async(filePath) =>{
-        let [results] = await client.textDetection(filePath);
-        const data = Array.from(results.textAnnotations);
-        const text = data.map(item => item.description);
-
-        console.log(text);
-    }
-    
-    detectLandMark(filePath);
-
+    const data = await detectLandMark(filePath);
+    const status = await validate(data);
+    console.log(status);
     res.send("ok");
 })
 
