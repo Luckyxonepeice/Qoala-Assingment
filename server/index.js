@@ -3,7 +3,7 @@ const app = express();
 const userRouter = require('./routes/user')
 require('./db/index')
 
-
+app.use(express.json());
 app.use('/',userRouter);
 
 app.listen(5000, () => {
