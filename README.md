@@ -18,11 +18,11 @@
 Step1:First clone the Project to Local repository and then cd to the project and
 Install The package required 
 
-\`\`\`bash
-git clone https://github.com/yourusername/projectname.git
-cd projectname
-npm install
-\`\`\`
+bash
+-git clone https://github.com/yourusername/projectname.git
+-cd projectname
+-npm install
+
 
 Replace Link With URL of the repository. Establisg connection with your own Database Connection Link and google vision API.
 
