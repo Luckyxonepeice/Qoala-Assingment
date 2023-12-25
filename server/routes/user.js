@@ -40,10 +40,27 @@ router.post('/add/card',uploadImage.single("card"),async (req,res)=>{
 
 router.get('/get/card', async(req, res)=>{
 
-    const result = await User.find({});
-    //console.log(result);
     
-    res.json({result:result});
+    const { dateType, status } = req.query;
+    let query = {};
+
+    // If dateType is provided, filter by timestamp
+    if (dateType === 'prevCard') {
+        const startDate = new Date(); // This gives the current date and time
+        const endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 1); // Add 1 day to get the end of the day
+        query.timestamp = { $gte: startDate, $lt: endDate };
+    }
+
+    // If status is provided, filter by status
+    if (['complete', 'incomplete', 'wrongData'].includes(status)) {
+        query.Status = status;
+    }
+
+    const data = await User.find(query);
+    //console.log(result);
+
+    res.json({ result: data });
 })
 
 router.post('/update/card/:cardId', async(req,res)=>{
@@ -102,4 +119,6 @@ router.delete('/delete/card/:cardId', async(req,res)=>{
     res.json({message:"Removed SuccessFully"});
 
 })
+
+
 module.exports= router;

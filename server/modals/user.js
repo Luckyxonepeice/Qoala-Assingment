@@ -37,6 +37,10 @@ const userSchema = mongoose.Schema({
     Status:{
         type:String,
         required:true,
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now 
     }
 
 })

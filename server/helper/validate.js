@@ -23,14 +23,14 @@ function validate(data){
     
     if(idCardNumber==='' || Name==='' || Date_of_birth==='' || Last_name===''
     || Date_of_issue==='' || Date_of_Expiry===''){
-        return 'OCR Data Incomplete';
+        return 'incomplete';
     }
 
-    if(!Contain_INT(idCardNumber)) return 'Wrong Data';
+    if(!Contain_INT(idCardNumber)) return 'wrongData';
     
-    if(!Contain_ALPHA(Name) || !Contain_ALPHA(Last_name)) return 'Wrong Data';
+    if(!Contain_ALPHA(Name) || !Contain_ALPHA(Last_name)) return 'Wrong-Data';
     
-    return 'OCR Data True'
+    return 'complete';
 
     
 }

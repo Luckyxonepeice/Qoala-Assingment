@@ -21,7 +21,7 @@ const detectLandMark = async (filePath) => {
         data.push(match[0]);
     }
 
-    //console.log(data);
+
     let extractedInfo = {
         idCardNumber:'',
         Name:'',
