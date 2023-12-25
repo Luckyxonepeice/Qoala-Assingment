@@ -10,8 +10,8 @@
 - https://github.com/Luckyxonepeice/qoala-frontend
 
 # Hosting
-- https://client-thai-cardreader.netlify.app/
-- https://assingment-server.onrender.com
+- https://assingment-thai-id-ocr.netlify.app/  (Frontend+Backend)
+- https://assingment-server.onrender.com  (Backend)
   
 # Installation
 
