@@ -4,7 +4,7 @@ const userRouter = require('./routes/user')
 const helmet = require('helmet');
 const cors = require('cors');
 
-require('dotenv').config({path: "./vars/.env"});
+require('dotenv').config({path: ".env"});
 require('./db/index')
 
 app.use(helmet({
