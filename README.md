@@ -50,6 +50,7 @@ Frontend Application:
 1. A user-friendly interface allowing users to upload images and initiate OCR processing.
 2. Backend Services
 3. API Gateway: Acts as a single entry point for all client requests, routing them to appropriate microservices.
+4. Filter-Mechanism: Based on the Status of Card data.
 
 Image Preprocessing Service: Responsible for preprocessing uploaded images,and preparing them for OCR processing.
 
