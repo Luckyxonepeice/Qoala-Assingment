@@ -1,10 +1,15 @@
 const express = require("express");
 const app = express();
 const userRouter = require('./routes/user')
+const helmet = require('helmet');
 const cors = require('cors');
 
 require('dotenv').config({path: "./vars/.env"});
 require('./db/index')
+
+app.use(helmet({
+  crossOriginResourcePolicy: false,
+}));
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,6 +22,8 @@ app.use(function (req, res, next) {
 app.use(express.json());
 app.use('/',userRouter);
 
-app.listen(5000, () => {
-  console.log("Server is Running");
+let port = process.env.PORT;
+
+app.listen(port, () => {
+  console.log(`Server is Running ${port}`);
 });
