@@ -72,7 +72,7 @@ const detectLandMark = async (filePath) => {
             }
         }
     }
-    console.log(extractedInfo);
+    //console.log(extractedInfo);
     return extractedInfo;
 }
 
