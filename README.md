@@ -10,7 +10,7 @@
 - https://github.com/Luckyxonepeice/qoala-frontend
 
 # Hosting
-- https://assingment-thai-id-ocr.netlify.app/  (Frontend+Backend)
+- https://assingment-thai-id-ocr.netlify.app/  (Frontend+Backend (Takes Time to Render because of rendering service provider) )
 - https://assingment-server.onrender.com  (Backend)
   
 # Installation
