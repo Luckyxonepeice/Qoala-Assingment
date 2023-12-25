@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const userRouter = require('./routes/user')
+const cors = require('cors');
+
+require('dotenv').config({path: "./vars/.env"});
 require('./db/index')
 
 app.use(function (req, res, next) {
